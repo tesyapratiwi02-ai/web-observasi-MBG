@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observasi Kokurikuler MBG - SMP N 2 Gandrungmangu</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --border: #dee2e6;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h2 {
+      margin: 0 0 5px 0;
+      color: #1b3058;
+    }
+    .header h4 {
+      margin: 0;
+      color: #555;
+      font-weight: 500;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    .tips-box {
+      background-color: #e7f1ff;
+      border-left: 4px solid var(--primary);
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 0 5px 5px 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-success { background: #198754; color: white; }
+    .btn-danger { background: #dc3545; color: white; font-size: 12px; padding: 5px 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      font-size: 13px;
+    }
+    th {
+      background: #e9ecef;
+    }
+    .badge {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .badge-sab { background: #d1e7dd; color: #0f5132; }
+    .badge-bsh { background: #cff4fc; color: #055160; }
+    .badge-mb { background: #f8d7da; color: #842029; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- IDENTITAS SEKOLAH -->
+  <div class="header">
+    <h2>SMP N 2 GANDRUNGMANGU</h2>
+    <h4>Lembar Observasi Kokurikuler Makan Bergizi Gratis (MBG)</h4>
+  </div>
+
+  <!-- CATATAN TIPS PRAKTIS -->
+  <div class="tips-box">
+    <strong>💡 Tips Praktis Pengisian:</strong><br>
+    Untuk menghemat waktu, guru cukup mencatat nama anak pada kategori <strong>Sangat Berkembang (SAB)</strong> dan <strong>Mulai Berkembang / Perlu Bimbingan (MB)</strong>. Siswa sisanya yang tidak tercatat secara otomatis dikategorikan sudah <strong>Berkembang Sesuai Harapan (BSH)</strong>.
+  </div>
+
+  <!-- FORM INPUT -->
+  <div class="card">
+    <div class="grid-3">
+      <div class="form-group">
+        <label>Tanggal Observasi</label>
+        <input type="date" id="tgl">
+      </div>
+      <div class="form-group">
+        <label>Kelas</label>
+        <select id="kelas">
+          <option value="7A">7A</option>
+          <option value="7B">7B</option>
+          <option value="7C">7C</option>
+          <option value="7D">7D</option>
+          <option value="7E">7E</option>
+          <option value="8A">8A</option>
+          <option value="8B">8B</option>
+          <option value="8C">8C</option>
+          <option value="8D">8D</option>
+          <option value="8E">8E</option>
+          <option value="9A">9A</option>
+          <option value="9B">9B</option>
+          <option value="9C">9C</option>
+          <option value="9D">9D</option>
+          <option value="9E">9E</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Guru Pendamping Kokurikuler</label>
+        <input type="text" id="guru" placeholder="Nama Guru Pendamping">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label>Nama Siswa</label>
+        <input type="text" id="namaSiswa" placeholder="Masukkan nama siswa">
+      </div>
+      <div class="form-group">
+        <label>Catatan Khusus Guru (Opsional)</label>
+        <input type="text" id="catatan" placeholder="Contoh: Mengingatkan teman untuk merapikan wadah makan">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label>1. Keimanan & Ketakwaan</label>
+        <select id="d1">
+          <option value="BSH (Berkembang Sesuai Harapan)">BSH (Berkembang Sesuai Harapan)</option>
+          <option value="SAB (Sangat Berkembang)">SAB (Sangat Berkembang)</option>
+          <option value="MB (Mulai Berkembang / Perlu Bimbingan)">MB (Mulai Berkembang / Perlu Bimbingan)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>2. Kesehatan Jasmani & Rohani</label>
+        <select id="d2">
+          <option value="BSH (Berkembang Sesuai Harapan)">BSH (Berkembang Sesuai Harapan)</option>
+          <option value="SAB (Sangat Berkembang)">SAB (Sangat Berkembang)</option>
+          <option value="MB (Mulai Berkembang / Perlu Bimbingan)">MB (Mulai Berkembang / Perlu Bimbingan)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label>3. Kolaborasi & Gotong Royong</label>
+        <select id="d3">
+          <option value="BSH (Berkembang Sesuai Harapan)">BSH (Berkembang Sesuai Harapan)</option>
+          <option value="SAB (Sangat Berkembang)">SAB (Sangat Berkembang)</option>
+          <option value="MB (Mulai Berkembang / Perlu Bimbingan)">MB (Mulai Berkembang / Perlu Bimbingan)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>4. Kemandirian & Tanggung Jawab</label>
+        <select id="d4">
+          <option value="BSH (Berkembang Sesuai Harapan)">BSH (Berkembang Sesuai Harapan)</option>
+          <option value="SAB (Sangat Berkembang)">SAB (Sangat Berkembang)</option>
+          <option value="MB (Mulai Berkembang / Perlu Bimbingan)">MB (Mulai Berkembang / Perlu Bimbingan)</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" onclick="tambahData()">Simpan Data Observasi</button>
+  </div>
+
+  <!-- STATUS PENYIMPANAN -->
+  <div class="card" style="padding:12px 20px;">
+    <div style="font-size:13px;">
+      <strong>Penyimpanan:</strong> Data tampil di rekap halaman dan dapat dikirim ke Google Sheets.
+      <span style="color:#198754;">Pastikan URL Google Apps Script sudah dimasukkan ke kode.</span>
+    </div>
+  </div>
+
+  <!-- TABEL REKAP -->
+  <div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <h3 style="margin: 0;">Rekap Observasi</h3>
+      <button class="btn btn-success" onclick="eksporCSV()">Ekspor ke Excel (CSV)</button>
+    </div>
+    <div style="overflow-x: auto;">
+      <table id="tabelData">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Kelas</th>
+            <th>Guru Pendamping</th>
+            <th>Nama Siswa</th>
+            <th>Imtak</th>
+            <th>Kesehatan</th>
+            <th>Gotong Royong</th>
+            <th>Kemandirian</th>
+            <th>Catatan</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="bodyTabel">
+          <!-- Data akan terisi secara otomatis -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  /*
+   * ============================================================
+   * KONFIGURASI GOOGLE SHEETS
+   * ============================================================
+   * 1. Buat Google Apps Script sebagai Web App.
+   * 2. Salin URL Web App, lalu tempel di GOOGLE_SCRIPT_URL.
+   * 3. Contoh:
+   * const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/XXXXX/exec";
+   */
+  const GOOGLE_SCRIPT_URL = "TEMPEL_URL_GOOGLE_APPS_SCRIPT_DI_SINI";
+
+  // Set tanggal default hari ini
+  document.getElementById('tgl').valueAsDate = new Date();
+
+  // Data lokal tetap dipakai sebagai cache/reka​p tampilan
+  let dataObservasi = JSON.parse(localStorage.getItem('data_mbg_smp2gdm')) || [];
+  tampilkanData();
+
+  async function tambahData() {
+    const tgl = document.getElementById('tgl').value;
+    const kelas = document.getElementById('kelas').value;
+    const guru = document.getElementById('guru').value.trim();
+    const nama = document.getElementById('namaSiswa').value.trim();
+    const d1 = document.getElementById('d1').value;
+    const d2 = document.getElementById('d2').value;
+    const d3 = document.getElementById('d3').value;
+    const d4 = document.getElementById('d4').value;
+    const catatan = document.getElementById('catatan').value.trim();
+
+    if (!nama) {
+      alert("Silakan isi nama siswa terlebih dahulu!");
+      return;
+    }
+
+    const item = {
+      id: Date.now(),
+      timestamp: new Date().toISOString(),
+      tgl, kelas, guru: guru || '-', nama, d1, d2, d3, d4, catatan
+    };
+
+    // Simpan lokal agar rekap langsung terlihat
+    dataObservasi.push(item);
+    simpanLokalDanUpdate();
+
+    // Kirim ke Google Sheets jika URL sudah dikonfigurasi
+    if (GOOGLE_SCRIPT_URL === "https://script.google.com/macros/s/XXXXXXXX/exec") {
+      alert("Data tersimpan di halaman ini.\n\nGoogle Sheets belum terhubung. Masukkan URL Google Apps Script pada bagian GOOGLE_SCRIPT_URL.");
+      resetForm();
+      return;
+    }
+
+    const tombol = document.querySelector('.btn-primary');
+    const teksAwal = tombol.textContent;
+    tombol.disabled = true;
+    tombol.textContent = "Menyimpan...";
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(item)
+      });
+
+      alert("Data berhasil dikirim ke Google Sheets.");
+      resetForm();
+    } catch (error) {
+      console.error(error);
+      alert("Data tersimpan di halaman ini, tetapi pengiriman ke Google Sheets gagal. Periksa URL Google Apps Script dan koneksi internet.");
+    } finally {
+      tombol.disabled = false;
+      tombol.textContent = teksAwal;
+    }
+  }
+
+  function resetForm() {
+    document.getElementById('namaSiswa').value = '';
+    document.getElementById('catatan').value = '';
+    document.getElementById('d1').value = 'BSH (Berkembang Sesuai Harapan)';
+    document.getElementById('d2').value = 'BSH (Berkembang Sesuai Harapan)';
+    document.getElementById('d3').value = 'BSH (Berkembang Sesuai Harapan)';
+    document.getElementById('d4').value = 'BSH (Berkembang Sesuai Harapan)';
+  }
+
+  function hapusData(id) {
+    if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
+      dataObservasi = dataObservasi.filter(i => i.id !== id);
+      simpanLokalDanUpdate();
+    }
+  }
+
+  function simpanLokalDanUpdate() {
+    localStorage.setItem('data_mbg_smp2gdm', JSON.stringify(dataObservasi));
+    tampilkanData();
+  }
+
+  function formatBadge(val) {
+    if (val.startsWith('SAB')) return `<span class="badge badge-sab">SAB</span>`;
+    if (val.startsWith('MB')) return `<span class="badge badge-mb">MB</span>`;
+    return `<span class="badge badge-bsh">BSH</span>`;
+  }
+
+  function tampilkanData() {
+    const tbody = document.getElementById('bodyTabel');
+    tbody.innerHTML = '';
+
+    if (dataObservasi.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="10" style="text-align:center; color:#888;">Belum ada data observasi yang tersimpan.</td></tr>`;
+      return;
+    }
+
+    dataObservasi.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${escapeHtml(item.tgl)}</td>
+        <td><b>${escapeHtml(item.kelas)}</b></td>
+        <td>${escapeHtml(item.guru)}</td>
+        <td><b>${escapeHtml(item.nama)}</b></td>
+        <td>${formatBadge(item.d1)}</td>
+        <td>${formatBadge(item.d2)}</td>
+        <td>${formatBadge(item.d3)}</td>
+        <td>${formatBadge(item.d4)}</td>
+        <td>${escapeHtml(item.catatan || '-')}</td>
+        <td><button class="btn btn-danger" onclick="hapusData(${item.id})">Hapus</button></td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function eksporCSV() {
+    if (dataObservasi.length === 0) {
+      alert("Tidak ada data untuk diekspor!");
+      return;
+    }
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "Timestamp,Tanggal,Kelas,Guru Pendamping,Nama Siswa,Keimanan & Ketakwaan,Kesehatan Jasmani & Rohani,Gotong Royong,Kemandirian & Tanggung Jawab,Catatan\n";
+
+    dataObservasi.forEach(i => {
+      csvContent += `"${i.timestamp || ''}","${i.tgl}","${i.kelas}","${i.guru}","${i.nama}","${i.d1}","${i.d2}","${i.d3}","${i.d4}","${i.catatan || ''}"\n`;
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `Observasi_MBG_SMP2GDM_${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+</body>
+</html>
